@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
 
 public class ClientThread extends Thread{
 	
-protected static Semaphore sem = new Semaphore(1);
+protected static Semaphore sync = new Semaphore(10, true);
 	
 	protected void sendMessageToServer(byte[] msg) {
 		if (msg.length >= ServerApp.MAX_MSG_SIZE)
